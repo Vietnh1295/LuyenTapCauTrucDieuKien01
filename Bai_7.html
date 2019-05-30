@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 700px">
+    <fieldset>
+        <legend>Tính cướu điện thoại</legend>
+        Số phút gọi = <input id="Phut" type="number" >
+        Cước mỗi phút(đồng)= <input id="Cưoc" type="number">
+        <input type="button" value="Tính toán" onclick="Tinh()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function Tinh() {
+        var Phut=parseInt(document.getElementById('Phut').value);
+        var Cưoc=parseInt(document.getElementById('Cưoc').value);
+        var res;
+        var money= Phut*Cưoc;
+        if(money>=100000)
+        {
+            res='Gọi tháng này nhiều ';
+        }
+        else if(money>500000){res='Gọi tháng này vừa ';}else
+        {
+            res='Gọi tháng này ít ';
+        }
+        document.getElementById('Res').innerHTML=res+money+' đồng';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 700px">
+    <fieldset>
+        <legend>Tính hoa hồng</legend>
+        Doanh số bán hàng = <input id="Doanhsobanhang" type="number" >
+        Hoa hồng (%)= <input id="HoaHong" type="number" min="0" max="100">
+        <input type="button" value="Tính toán" onclick="Tinh()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function Tinh() {
+        var Doanhsobanhang=parseInt(document.getElementById('Doanhsobanhang').value);
+        var HoaHong=parseInt(document.getElementById('HoaHong').value);
+        var res;
+        var money= HoaHong/100*Doanhsobanhang;
+        if(HoaHong>=60)
+        {
+            res='Hoa hồng tháng này nhiều ';
+        }
+        else if(HoaHong>40){res='Hoa hồng tháng này vừa ';}else
+        {
+            res='Hoa hồng tháng này ít ';
+        }
+        document.getElementById('Res').innerHTML=res+money;
+    }
+</script>
+</body>
+</html>

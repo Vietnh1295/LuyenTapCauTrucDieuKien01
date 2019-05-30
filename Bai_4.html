@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <fieldset style="margin-right:  1500px;">
+        <legend>
+            Tìm ra số lớn nhất trong 3 số
+        </legend>
+        Nhập số <input id="Num" type="number">
+        <input type="button" id="Tim" value="Nhập số" onclick="TimSo();">
+        <p id="Chuoi"></p>
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    var Num=[];
+    function TimSo() {
+         var res=0;
+        Num.push(parseInt(document.getElementById('Num').value));
+        if(Num.length==3)
+        {
+            document.getElementById('Tim').value='Tìm số lớn nhất'
+            for(var i=0;i<Num.length;i++)
+            {
+                if(res<Num[i]){res=Num[i];}
+            }
+            res='là'+res;
+            document.getElementById('Res').innerHTML='Số lớn nhất của chuỗi'+res;
+        }
+        else if(Num.length >3)
+        {
+            for(var i=0;i<Num.length;i++)
+            {
+                Num.pop();
+                Num.pop();
+                delete  Num[i];
+            }
+            Num[0]=parseInt(document.getElementById('Num').value);
+            document.getElementById('Tim').value='Nhập số'
+        }
+        else
+            {
+
+            }
+        document.getElementById('Chuoi').innerHTML=Num;
+
+
+    }
+</script>
+</body>
+</html>

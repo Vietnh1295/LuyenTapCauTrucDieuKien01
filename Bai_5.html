@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 700px">
+    <fieldset>
+        <legend>Học lực của học sinh</legend>
+        Nhập điểm kiểm tra giữa kì = <input id="KiemTraGiuaKi" type="number" min="0" max="10">
+        Nhập điểm kiểm tra cuối kì= <input id="KiemTraCuoiKi" type="number" min="0" max="10">
+        <input type="button" value="Tính toán" onclick="Tinh()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function Tinh() {
+        var KiemTraGiuaKi=parseInt(document.getElementById('KiemTraGiuaKi').value);
+        var KiemTraCuoiKi=parseInt(document.getElementById('KiemTraCuoiKi').value);
+        var res;
+        var arg=(KiemTraGiuaKi+KiemTraCuoiKi)/2;
+        if(arg>=8)
+        {
+            res='Học sinh giỏi';
+        }
+        else if(arg>6){res='Học sinh khá';}else
+        {
+            res='Học sinh Tb';
+        }
+        document.getElementById('Res').innerHTML=res;
+    }
+</script>
+</body>
+</html>

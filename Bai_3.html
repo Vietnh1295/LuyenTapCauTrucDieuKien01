@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 900px">
+    <fieldset>
+        <legend>Số dương Hay số âm</legend>
+        Nhập Số= <input id="Num" type="text">
+        <input type="button" value="Tính toán" onclick="Tinh()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function Tinh() {
+        var Num=parseInt(document.getElementById('Num').value);
+        var res;
+        if(Num>=0)
+        {
+            res='Số dương';
+        }
+        else
+        {
+            res='Số âm';
+        }
+        document.getElementById('Res').innerHTML=res;
+    }
+</script>
+</body>
+</html>

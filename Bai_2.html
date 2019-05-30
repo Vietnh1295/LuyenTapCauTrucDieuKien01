@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 400px;margin-left: 500px; margin-right: 1000px;">
+    <fieldset>
+        <legend>Kiểm tra xem học sinh có đủ tuổi vào lớp 10 không?</legend>
+        Nhập số tuổi <input type="number" id="Tuoi">
+        <input type="button" value="Kiểm Tra Tuổi" onclick="KiemTraTuoi();">
+        <p id="Res">Result</p>
+
+    </fieldset>
+    <script>
+        function KiemTraTuoi() {
+            var Tuoi=parseInt(document.getElementById('Tuoi').value);
+
+            var res;
+            if (Tuoi>=9&&Tuoi<=30)
+            {
+                res='Học sinh đã đủ tuổi vào lớp 10';
+            }
+            else if(Tuoi>30)
+                {
+                    res='Học sinh đã quá tuổi vào lớp 10';
+                }
+            else
+            {
+                res='Học sinh chưa đủ tuổi vào lớp 10';
+            }
+            document.getElementById('Res').innerHTML=res;
+        }
+    </script>
+</form>
+</body>
+</html>
